@@ -1,4 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TRI-HARDER — Marketing Website
+
+The public-facing website for [TRI-HARDER AI Triathlon Coach](https://ambitious-smoke-0c1398603.6.azurestaticapps.net/). Showcases features, training science blog, and project info.
+
+**Live site:** [martinctc.github.io/tri-harder-app](https://martinctc.github.io/tri-harder-app/)
+
+## Tech Stack
+
+- **Next.js 16** (App Router, static export)
+- **Tailwind CSS v4**
+- **Framer Motion** — scroll animations
+- **MDX** — blog posts in `src/content/blog/`
+- **GitHub Pages** — deployed via GitHub Actions
+
+## Development
+
+```bash
+npm install
+npm run dev     # Dev server at http://localhost:3000
+npm run build   # Static export to /out
+```
+
+## Adding Blog Posts
+
+Create a new `.mdx` file in `src/content/blog/`:
+
+```mdx
+---
+title: "Your Post Title"
+date: "2026-04-20"
+excerpt: "A short description for the listing page."
+tags: ["tag1", "tag2"]
+author: "Your Name"
+---
+
+Your markdown content here...
+```
+
+## Deployment
+
+Pushes to `main` trigger automatic deployment to GitHub Pages via `.github/workflows/deploy.yml`.
+
+## Pages
+
+| Route | Content |
+|-------|---------|
+| `/` | Landing page — hero, features, how it works, CTA |
+| `/features` | Detailed feature breakdown |
+| `/blog` | Blog listing |
+| `/blog/[slug]` | Individual blog posts |
+| `/about` | Project story, tech stack, roadmap |
+| `/privacy` | Privacy policy & training disclaimer |
 
 ## Getting Started
 
