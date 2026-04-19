@@ -19,10 +19,10 @@ const techStack = [
 ];
 
 const roadmap = [
-  "Charts and graphs in PDF coaching reports",
-  "Scheduled or emailed reports",
+  "Scheduled or emailed coaching reports",
   "Deeper intervals.icu integration",
-  "Enhanced training plan periodization",
+  "Enhanced training plan periodization with auto-adjustment",
+  "Wearable data integration for recovery and readiness",
   "Community features and sharing",
   "Custom report templates",
 ];
