@@ -20,7 +20,7 @@ export default function Footer() {
             <p className="mt-2 text-sm text-slate-400">
               AI-powered coaching built for triathletes.
               <br />
-              Free and open source.
+              Free to use — no subscription required.
             </p>
           </div>
 

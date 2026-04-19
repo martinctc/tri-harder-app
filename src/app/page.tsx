@@ -17,7 +17,7 @@ import {
 import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
 import CTAButton from "@/components/CTAButton";
-import { APP_URL, GITHUB_URL } from "@/lib/constants";
+import { APP_URL } from "@/lib/constants";
 
 const FEATURES = [
   {
@@ -75,7 +75,7 @@ const CAPABILITIES = [
   "Tracks CTL/ATL/TSB and workload ratios",
   "Falls back to rule-based coaching when AI is unavailable",
   "Runs entirely in your browser — your data stays private",
-  "Free and open source",
+  "Completely free to use",
 ];
 
 export default function Home() {
@@ -95,7 +95,7 @@ export default function Home() {
             className="text-center"
           >
             <span className="mb-6 inline-block rounded-full border border-blue-500/30 bg-blue-600/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-blue-400">
-              Free &amp; Open Source
+              Free to Use
             </span>
 
             <h1 className="mx-auto max-w-3xl text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
@@ -113,8 +113,8 @@ export default function Home() {
 
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <CTAButton size="large">Try TRI-HARDER</CTAButton>
-              <CTAButton variant="secondary" href={GITHUB_URL}>
-                View on GitHub
+              <CTAButton variant="secondary" href="/about">
+                Learn More
               </CTAButton>
             </div>
           </motion.div>
@@ -251,7 +251,7 @@ export default function Home() {
               TRI-HARDER started as a personal project to see what would happen
               if you gave an AI access to your actual training data. Instead of
               generic advice, you get a coach that knows your workouts, your
-              goals, and your fitness history. It&apos;s free, open source, and
+              goals, and your fitness history. It&apos;s free to use and
               your data stays private — no third-party analytics, no selling
               your information.
             </p>

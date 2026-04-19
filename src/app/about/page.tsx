@@ -5,7 +5,7 @@ import CTAButton from "@/components/CTAButton";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about TRI-HARDER — the free, open-source AI triathlon coach. Built by a triathlete, for triathletes.",
+    "Learn about TRI-HARDER — the free AI triathlon coach. Built by a triathlete, for triathletes.",
 };
 
 const techStack = [
@@ -58,7 +58,7 @@ export default function AboutPage() {
             intervals.icu and gives you specific, contextual guidance.
           </p>
           <p>
-            The app is free, open source, and privacy-first. Your training data
+            The app is free to use and privacy-first. Your training data
             stays in your browser. The AI model key lives server-side. There are
             no ads, no third-party analytics, and no selling of your data.
           </p>
@@ -123,8 +123,8 @@ export default function AboutPage() {
         {/* CTA */}
         <div className="mt-16 flex gap-4">
           <CTAButton>Try TRI-HARDER</CTAButton>
-          <CTAButton variant="secondary" href={GITHUB_URL}>
-            View source on GitHub
+          <CTAButton variant="secondary" href="/features">
+            View features
           </CTAButton>
         </div>
       </div>
