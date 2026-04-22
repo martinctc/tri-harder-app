@@ -133,15 +133,15 @@ export default function Home() {
                 <div className="h-3 w-3 rounded-full bg-green-500/60" />
                 <span className="ml-2 text-xs text-slate-500">TRI-HARDER AI Coach</span>
               </div>
-              <div className="flex items-center justify-center p-12 text-slate-600">
-                <div className="text-center">
-                  <BarChart3 size={48} className="mx-auto mb-4 text-blue-500/40" />
-                  <p className="text-sm text-slate-500">
-                    App screenshot — add your own at{" "}
-                    <code className="text-blue-400/60">public/screenshots/</code>
-                  </p>
-                </div>
-              </div>
+              <Image
+                src="https://martinctc.github.io/images/tri-harder-app.jpeg"
+                alt="TRI-HARDER AI Coach app screenshot"
+                width={1600}
+                height={1000}
+                className="h-auto w-full"
+                priority
+                unoptimized
+              />
             </div>
           </motion.div>
         </div>
