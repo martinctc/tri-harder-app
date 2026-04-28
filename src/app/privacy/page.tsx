@@ -68,6 +68,17 @@ export default function PrivacyPage() {
                   your device during report generation.
                 </span>
               </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
+                <span>
+                  <strong className="text-white">Minimal usage stats</strong>{" "}
+                  are recorded for authenticated OAuth users: one session ping
+                  per browser tab containing a pseudonymised account hash,
+                  timestamp, and broad device/browser/OS family derived from
+                  your User-Agent. No page views, no clicks, no IP addresses,
+                  no cookies, no third-party trackers.
+                </span>
+              </li>
             </ul>
           </section>
 

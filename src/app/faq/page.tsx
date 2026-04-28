@@ -56,7 +56,7 @@ const FAQ_GROUPS: { heading: string; items: FAQ[] }[] = [
       },
       {
         q: "Are there any third-party trackers or analytics?",
-        a: "No. There are no analytics scripts, advertising trackers, or third-party tag managers in the app.",
+        a: "No. There are no third-party analytics scripts (Google Analytics, Plausible, etc.), advertising trackers, or tag managers. The app does record a minimal first-party session ping for signed-in users — provider, a pseudonymised account hash, timestamp, and broad device/browser family — purely so the maintainer can see basic usage stats. No cookies, no IP addresses, no page views.",
       },
     ],
   },
