@@ -9,6 +9,8 @@ export const SITE_URL = "https://martinctc.github.io/tri-harder-app";
 
 export const NAV_LINKS = [
   { label: "Features", href: "/features" },
+  { label: "Prompts", href: "/prompts" },
+  { label: "FAQ", href: "/faq" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ] as const;
