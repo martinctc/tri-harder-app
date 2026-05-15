@@ -18,13 +18,22 @@ const techStack = [
   { label: "Reports", value: "jsPDF (client-side PDF generation)" },
 ];
 
+const recentlyShipped = [
+  "Training Plan page — season phase timeline, phase cards, and milestone tracker",
+  "Strength & Conditioning guide — Essential 6 exercises with progressions and technique cues",
+  "Proactive coaching alerts — ACWR overtraining risk, discipline gap nudge, race-week briefing",
+  "Coaching memory check-ins — inline prompts to confirm or dismiss stale stored facts",
+  "Free Strava support — training load estimated from HR and power when Relative Effort is unavailable",
+  "intervals.icu OAuth — connect via OAuth in addition to API key",
+  "6 months of Strava history — up from 6 weeks for richer seasonal analysis",
+];
+
 const roadmap = [
   "Scheduled or emailed coaching reports",
-  "Deeper intervals.icu integration",
-  "Enhanced training plan periodization with auto-adjustment",
   "Wearable data integration for recovery and readiness",
   "Community features and sharing",
   "Custom report templates",
+  "Enhanced training plan auto-adjustment based on completed workouts",
 ];
 
 export default function AboutPage() {
@@ -88,6 +97,23 @@ export default function AboutPage() {
 
         {/* What's next */}
         <div className="mt-16">
+          <h2 className="mb-6 text-2xl font-bold text-white">
+            Recently shipped
+          </h2>
+          <ul className="space-y-3">
+            {recentlyShipped.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 text-sm text-slate-300"
+              >
+                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-green-400" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-12">
           <h2 className="mb-6 text-2xl font-bold text-white">
             What&apos;s next
           </h2>

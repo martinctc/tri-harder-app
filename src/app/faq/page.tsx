@@ -29,6 +29,10 @@ const FAQ_GROUPS: { heading: string; items: FAQ[] }[] = [
         a: "No. TRI-HARDER runs entirely in your browser. Open the app URL, connect a data source, and start chatting.",
       },
       {
+        q: "Do I need a Strava Premium (Summit) subscription?",
+        a: "No. TRI-HARDER works with a free Strava account. Strava's Relative Effort score is a Premium-only API field, so if you don't have Premium, TRI-HARDER estimates training stress from your heart rate and power data instead. Set your Threshold Heart Rate (LTHR) and FTP in your Profile for best accuracy. The training load stats will show '(estimated)' when using this method.",
+      },
+      {
         q: "Which sports does it support?",
         a: "Swim, bike, and run primarily — the three triathlon disciplines. Other activities (e.g. strength) are recognised but the coaching analysis is tuned for triathlon training.",
       },
@@ -86,11 +90,11 @@ const FAQ_GROUPS: { heading: string; items: FAQ[] }[] = [
     items: [
       {
         q: "How are CTL, ATL, TSB, and ACWR calculated?",
-        a: "Standard exponentially-weighted models (CTL = 42-day, ATL = 7-day) are computed from each workout's training stress score (TSS). When TSS is missing from a workout, a heuristic estimate is used. ACWR = ATL ÷ CTL.",
+        a: "Standard exponentially-weighted models (CTL = 42-day, ATL = 7-day) are computed from each workout's training stress score (TSS). TRI-HARDER uses Strava's Relative Effort where available; for free Strava accounts (or activities without it), TSS is estimated from heart rate data using the standard hrTSS formula (avgHR ÷ LTHR)² × duration, or from power data for cycling. ACWR = ATL ÷ CTL.",
       },
       {
         q: "How accurate is the training-load math?",
-        a: "It is as accurate as the underlying data. If your workouts have power, heart rate, or pace data, the load estimates are reasonable. If TSS is missing for many sessions, the estimates are approximate. Treat trends as more meaningful than absolute numbers.",
+        a: "It is as accurate as the underlying data. If your workouts have power, heart rate, or pace data, the load estimates are reliable. Strava Premium provides Relative Effort directly; free accounts get estimates from HR and power. Set your Threshold Heart Rate (LTHR) and FTP in your Profile for the most accurate estimates. Treat trends as more meaningful than absolute numbers.",
       },
       {
         q: "Can I generate a coaching report?",
@@ -103,7 +107,7 @@ const FAQ_GROUPS: { heading: string; items: FAQ[] }[] = [
     items: [
       {
         q: "I connected Strava but I do not see any workouts.",
-        a: "TRI-HARDER fetches up to ~6 weeks of recent activities. If your Strava account is new or has no recent activities, the dashboard will be empty. Refresh after recording a workout, or import older activities into Strava.",
+        a: "TRI-HARDER fetches up to 6 months (180 days) of recent activities from Strava. If your account is new or has no recent activities, the dashboard will be empty. Refresh after recording a workout, or import older activities into Strava.",
       },
       {
         q: "Strava login fails or loops back.",

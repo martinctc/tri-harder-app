@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { LucideIcon } from "lucide-react";
 import {
   MessageSquare,
   BarChart3,
@@ -8,6 +9,8 @@ import {
   Activity,
   Link2,
   Shield,
+  ClipboardList,
+  Dumbbell,
 } from "lucide-react";
 import CTAButton from "@/components/CTAButton";
 
@@ -17,7 +20,9 @@ export const metadata: Metadata = {
     "Explore all TRI-HARDER features: AI chat coaching, training dashboard, PDF coaching reports, training calendar, and more.",
 };
 
-const features = [
+type Feature = { icon: LucideIcon; title: string; description: string; bullets: string[] };
+
+const features: Feature[] = [
   {
     icon: MessageSquare,
     title: "AI Chat Coach",
@@ -41,6 +46,8 @@ const features = [
     bullets: [
       "Chronic Training Load (CTL), Acute Training Load (ATL), Training Stress Balance (TSB)",
       "Acute-to-Chronic Workload Ratio (ACWR) with colour-coded risk zones",
+      "CoachCorner daily briefing — AI-generated training observation on the dashboard",
+      "TSS estimation from heart rate and power — full training load metrics without Strava Premium",
       "Volume breakdown by discipline (swim/bike/run)",
       "Heart rate zone distribution and performance trends",
       "Weekly volume charts with training load overlay",
@@ -85,6 +92,8 @@ const features = [
       "Automatically extracts and stores coaching-relevant information",
       "Persists to Azure Table Storage when connected via Strava",
       "Syncs across devices (with Strava authentication)",
+      "Memory check-ins — inline prompts to confirm or dismiss stale stored facts",
+      "Auto-compaction when memory grows large, plus manual compact action in Settings",
       "Can be cleared at any time from Settings",
     ],
   },
@@ -96,7 +105,8 @@ const features = [
     bullets: [
       "Strava OAuth2 with automatic token refresh",
       "intervals.icu via OAuth or API key",
-      "Fetches up to 6 weeks of training history",
+      "Fetches up to 6 months (180 days) of Strava training history",
+      "Works without Strava Premium — training load estimated from HR and power",
       "Activities page with session details",
     ],
   },
@@ -108,8 +118,37 @@ const features = [
     bullets: [
       "Proactive training observation on every session start",
       "Rotating check-in greetings based on day of week",
+      "ACWR overtraining-risk alert when workload ratio goes out of range",
+      "Discipline-gap nudge when a sport is underrepresented relative to your focus",
+      "Race-week briefing in the 7 days before a scheduled race",
       "Previous sessions automatically archived (up to 20)",
       "Conversation history browser to review past sessions",
+    ],
+  },
+  {
+    icon: ClipboardList,
+    title: "Training Plan",
+    description:
+      "Map out your entire season on a structured plan page. Define training phases, milestones, and target races — and see exactly where you are in your periodization cycle.",
+    bullets: [
+      "Season timeline with colour-coded phase bars and a 'Today' marker",
+      "Phase cards showing focus, volume targets, and key sessions per phase",
+      "Milestone list grouped by target race, sorted chronologically",
+      "AI-generated training plans placed directly on the calendar",
+      "Race countdown shown in the nav header when a race is within 90 days",
+    ],
+  },
+  {
+    icon: Dumbbell,
+    title: "Strength & Conditioning",
+    description:
+      "A built-in guide to the Essential 6 strength exercises for triathletes, grounded in sport-specific coaching principles. Helps you build durability and injury resistance without a gym programme.",
+    bullets: [
+      "Essential 6 exercise cards with discipline-relevance tags (swim / bike / run)",
+      "Each exercise includes: why it matters, default prescription, technique cue, regression, progression, and common mistake",
+      "Filter by discipline to see the most relevant exercises for your focus",
+      "Ask the AI coach about any exercise or generate a custom routine",
+      "Guidance-only — does not count towards CTL/ATL to avoid inflating training load",
     ],
   },
   {

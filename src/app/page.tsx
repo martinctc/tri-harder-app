@@ -13,6 +13,8 @@ import {
   Zap,
   Shield,
   ChevronRight,
+  ClipboardList,
+  Dumbbell,
 } from "lucide-react";
 import FeatureCard from "@/components/FeatureCard";
 import SectionHeading from "@/components/SectionHeading";
@@ -30,7 +32,7 @@ const FEATURES = [
     icon: BarChart3,
     title: "Training Dashboard",
     description:
-      "Visualise CTL, ATL, TSB, and ACWR metrics. Track volume by discipline, HR zones, performance trends, and training load.",
+      "Visualise CTL, ATL, TSB, and ACWR metrics. Daily CoachCorner briefing, training load estimated from HR/power, and volume trends by discipline.",
   },
   {
     icon: FileText,
@@ -43,6 +45,18 @@ const FEATURES = [
     title: "Training Calendar",
     description:
       "Plan and track workouts on a weekly calendar. Mark completions with RPE ratings and see your training structure at a glance.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Training Plan",
+    description:
+      "Map your season with phase timelines, milestone tracking, and race countdowns. See exactly where you are in your periodization cycle.",
+  },
+  {
+    icon: Dumbbell,
+    title: "Strength & Conditioning",
+    description:
+      "Essential 6 exercises for triathlon durability — with discipline filters, progressions, technique cues, and AI coaching integration.",
   },
 ];
 
@@ -68,11 +82,14 @@ const STEPS = [
 ];
 
 const CAPABILITIES = [
-  "Analyses your last 6 weeks of training data",
+  "Analyses up to 6 months of Strava training history",
   "Remembers your goals, injuries, and preferences across sessions",
   "Generates structured training plans with periodization",
   "Produces downloadable PDF coaching reports",
   "Tracks CTL/ATL/TSB and workload ratios",
+  "Estimates training load from HR and power — no Strava Premium needed",
+  "Proactive alerts for overtraining risk and discipline gaps",
+  "Strength & conditioning guide with the Essential 6 exercises",
   "Falls back to rule-based coaching when AI is unavailable",
   "Runs entirely in your browser — your data stays private",
   "Completely free to use",
@@ -156,7 +173,7 @@ export default function Home() {
             subtitle="TRI-HARDER combines AI coaching, data analysis, and training planning in one free tool."
           />
 
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((feature, i) => (
               <FeatureCard key={feature.title} {...feature} delay={i * 0.1} />
             ))}
